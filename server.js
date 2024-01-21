@@ -34,7 +34,7 @@ app.post("/api/send-mail", async (req, res) => {
 
     await SENDMAIL(
       {
-        from: "support@aldhamrimedia.com",
+        from: "Mail.provider@almanaseer.co",
         to: to,
         subject: subject,
         body: body,

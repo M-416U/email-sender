@@ -2,8 +2,11 @@ const nodemailer = require("nodemailer");
 const HTML_TEMPLATE = require("./mail-template");
 require("dotenv").config();
 
+console.log("Email", process.env.AUTH_EMAIL);
+console.log("Host", process.env.MAIL_HOST);
+console.log("Pass", process.env.AUTH_PASSWORD);
 const transporter = nodemailer.createTransport({
-  service: "aldhamrimedia",
+  service: "almanaseer",
   host: process.env.MAIL_HOST,
   port: process.env.MAIL_PORT,
   auth: {
