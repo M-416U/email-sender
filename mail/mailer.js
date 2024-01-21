@@ -24,7 +24,13 @@ const SENDMAIL = async (mailDetails, callback) => {
     console.log("INFO: ", info);
     callback(info);
   } catch (error) {
+    if (error.code === "ETIMEDOUT") {
+      return console.error(
+        "Connection timed out. Retry or check network and server."
+      );
+    }
     console.error(error);
+    throw error;
   }
 };
 module.exports = SENDMAIL;
